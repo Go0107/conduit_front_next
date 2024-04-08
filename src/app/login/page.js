@@ -1,18 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function postUserLogin() {
-    // const FormData = {
-    //   email: email,
-    //   password: password
-    // }
+  const router = useRouter();
 
-    console.log(email);
+  async function postUserLogin(event) {
+    event.preventDefault();
+    // イベントのデフォルトの動作を防止する
+
+    const FormData = {
+      user:{
+        email: email,
+        password: password
+      }
+    }
+
+    await axios.post("http://localhost:3000/api/users/login", FormData);
+
+    router.push("/");
+
+    console.log(FormData);
   }
   
   return (
@@ -50,7 +63,7 @@ export default function Login() {
                   }}
                 />
               </fieldset>
-              <button onClick={() => postUserLogin()} className="btn btn-lg btn-primary pull-xs-right">Sign in</button>
+              <button onClick={postUserLogin} className="btn btn-lg btn-primary pull-xs-right">Sign in</button>
             </form>
           </div>
         </div>
