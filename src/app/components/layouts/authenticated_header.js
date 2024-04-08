@@ -10,7 +10,7 @@ export default function AuthenticatedHeader() {
             <Link className="nav-link active" href="/">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="/editor"> <i class="ion-compose"></i>&nbsp;New Article </Link>
+            <Link className="nav-link" href="/create"> <i class="ion-compose"></i>&nbsp;New Article </Link>
           </li>
           <li class="nav-item">
             <Link className="nav-link" href="/settings"> <i class="ion-gear-a"></i>&nbsp;Settings </Link>

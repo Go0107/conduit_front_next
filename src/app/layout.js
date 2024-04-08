@@ -30,8 +30,8 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="//demo.productionready.io/main.css" />
       </head>
       <body className={inter.className}>
-        {/* <AuthenticatedHeader /> */}
-        <Header />
+        <AuthenticatedHeader />
+        {/* <Header /> */}
         {children}
         <Footer />
       </body>
