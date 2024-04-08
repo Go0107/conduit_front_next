@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta charset="utf-8" />
+        <meta charSet="UTF-8" />
         <title>Conduit</title>
         <link
           href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
