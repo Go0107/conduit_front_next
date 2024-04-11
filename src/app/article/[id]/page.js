@@ -1,4 +1,35 @@
+"use client"
+
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useRouter } from 'next/navigation';
+
 export default function Article() {
+  const router = useRouter();
+
+  const [article, setArticle] = useState(null);
+
+  useEffect(() => {
+    console.log(router.isReady);
+    // if (router.isReady) {
+    console.log(router);
+    console.log(router.back);
+    // console.log(router.query);
+    const routeId = router.query;
+    // console.log(routeId);
+
+      // const routeId = router.query.id
+
+      // const response =  axios.get(`http://localhost:3000/api/articles/${routeId}`);
+      // console.log(response);
+      // setArticle(response.data);
+    // }
+  }, [router]);
+
+  if (!article) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="article-page">
       <div className="banner">

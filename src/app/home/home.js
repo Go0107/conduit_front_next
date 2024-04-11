@@ -48,7 +48,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* <div className="article-preview"> */}
               {test?.map((article, index) => {
                 return (
                   <div className="article-preview">
@@ -57,7 +56,7 @@ export default function Home() {
                         <img src="http://i.imgur.com/Qr71crq.jpg" />
                       </a>
                       <div classname="info">
-                        <a href="/profile/eric-simons" classname="author">
+                        <a classname="author">
                           Eric Simons
                         </a>
                         <span classname="date">January 20th</span>
@@ -66,7 +65,7 @@ export default function Home() {
                         <i classname="ion-heart" /> 29
                       </button>
                     </div>
-                    <a href="/article/how-to-build-webapps-that-scale" class="preview-link">
+                    <a href={`/article/${article.id}`} class="preview-link">
                       <h1>{article.title}</h1>
                       <p>{article.description}</p>
                       <span>Read more...</span>
@@ -77,7 +76,6 @@ export default function Home() {
                   </div>
                 );
               })}
-            {/* </div> */}
 
             <ul className="pagination">
               <li className="page-item active">
